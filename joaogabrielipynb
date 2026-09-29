@@ -1,0 +1,149 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "c04b89f8-41da-4bcf-bcda-091bcba4d3c8",
+   "metadata": {},
+   "source": [
+    "#jogo pra adivinhar numeros \n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "bb815626-7a28-45de-8505-ae35a8f888a4",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "[DEV-AEGISHUB-10] Adivinhe o número de 1 a 20! Você tem 5 tentativas.\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Tentativa 1/5 - seu número:  9\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "O número é MENOR.\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Tentativa 2/5 - seu número:  3\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "O número é MAIOR.\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Tentativa 3/5 - seu número:  5\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "O número é MAIOR.\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Tentativa 4/5 - seu número:  7\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "O número é MENOR.\n"
+     ]
+    },
+    {
+     "name": "stdin",
+     "output_type": "stream",
+     "text": [
+      "Tentativa 5/5 - seu número:  6\n"
+     ]
+    },
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "ACERTOU! Parabéns!\n"
+     ]
+    }
+   ],
+   "source": [
+    "import random\n",
+    "import socket\n",
+    "\n",
+    "laptop = socket.gethostname()\n",
+    "segredo = random.randint(1, 20)\n",
+    "\n",
+    "print(f\"[{laptop}] Adivinhe o número de 1 a 20! Você tem 5 tentativas.\")\n",
+    "\n",
+    "for tentativa in range(1, 6):\n",
+    "    palpite = int(input(f\"Tentativa {tentativa}/5 - seu número: \"))\n",
+    "\n",
+    "    if palpite == segredo:\n",
+    "        print(\"ACERTOU! Parabéns!\")\n",
+    "        break\n",
+    "    elif palpite < segredo:\n",
+    "        print(\"O número é MAIOR.\")\n",
+    "    else:\n",
+    "        print(\"O número é MENOR.\")\n",
+    "else:\n",
+    "    print(f\"Acabaram as tentativas. O número era {segredo}.\")\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "7c66877b-79c0-449d-935e-41a6631da7be",
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python (AegisHub IA)",
+   "language": "python",
+   "name": "aegis-ia"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.13.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
